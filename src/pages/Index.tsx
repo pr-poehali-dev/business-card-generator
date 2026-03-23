@@ -60,43 +60,42 @@ export default function Index() {
               boxSizing: "border-box",
             }}
           >
-            {/* Специализация сверху */}
-            <div
-              style={{
-                fontSize: 19,
-                color: "#555",
-                letterSpacing: "0.02em",
-                marginBottom: "auto",
-              }}
-            >
-              Юрист-медиатор
+            {/* Верхний блок: специализация + имя */}
+            <div>
+              <div
+                style={{
+                  fontSize: 19,
+                  color: "#555",
+                  letterSpacing: "0.02em",
+                  marginBottom: 14,
+                }}
+              >
+                Юрист-медиатор
+              </div>
+              <div
+                style={{
+                  fontSize: 38,
+                  fontWeight: 700,
+                  color: "#111",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.01em",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Алексей Назаров
+              </div>
             </div>
 
-            {/* Имя — в одну строку */}
+            {/* Телефон прибит к низу */}
             <div
               style={{
-                fontSize: 38,
-                fontWeight: 700,
-                color: "#111",
-                lineHeight: 1.1,
-                letterSpacing: "-0.01em",
-                marginBottom: 8,
-                marginTop: 16,
-              }}
-            >
-              Алексей Назаров
-            </div>
-
-            {/* Телефон снизу */}
-            <div
-              style={{
+                marginTop: "auto",
                 fontSize: 14,
                 color: "#444",
                 letterSpacing: "0.02em",
                 display: "flex",
                 alignItems: "center",
                 gap: 6,
-                marginTop: 20,
               }}
             >
               <span style={{ fontSize: 16 }}>☎</span>
