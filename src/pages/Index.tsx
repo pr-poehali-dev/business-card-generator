@@ -64,7 +64,7 @@ export default function Index() {
             <div
               style={{
                 fontSize: 19,
-                color: "#555",
+                color: "#111",
                 letterSpacing: "0.02em",
               }}
             >
