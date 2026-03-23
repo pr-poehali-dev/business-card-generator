@@ -135,16 +135,15 @@ export default function Index() {
               boxSizing: "border-box",
             }}
           >
-            {/* QR-код со скруглёнными углами */}
+            {/* QR-код с инверсией в белый */}
             <img
               src={QR_URL}
               alt="QR-код"
               style={{
-                width: "85%",
-                height: "85%",
+                width: "100%",
+                height: "100%",
                 objectFit: "contain",
                 filter: "invert(1)",
-                borderRadius: RADIUS,
               }}
             />
           </div>
