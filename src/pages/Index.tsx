@@ -99,7 +99,7 @@ export default function Index() {
             <div
               style={{
                 fontSize: 18,
-                color: "#444",
+                color: "#111",
                 letterSpacing: "0.02em",
                 display: "flex",
                 alignItems: "center",
