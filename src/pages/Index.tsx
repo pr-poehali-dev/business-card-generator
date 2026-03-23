@@ -144,6 +144,7 @@ export default function Index() {
                 height: "100%",
                 objectFit: "contain",
                 filter: "invert(1)",
+                mixBlendMode: "screen",
               }}
             />
           </div>
