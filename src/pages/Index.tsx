@@ -104,13 +104,13 @@ export default function Index() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "flex-end",
-                gap: 2,
+                gap: 0,
               }}
             >
               <img
                 src="https://cdn.poehali.dev/projects/132d405c-553e-42f4-8e21-517410a4dedf/bucket/e30f2269-6ee0-4329-8f5b-4d014c1f0be4.png"
                 alt="телефон"
-                style={{ width: 36, height: 36, objectFit: "contain" }}
+                style={{ width: 36, height: 36, objectFit: "contain", marginRight: -4 }}
               />
               +7 918 206-66-50
             </div>
