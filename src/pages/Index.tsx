@@ -63,7 +63,7 @@ export default function Index() {
             {/* Специализация сверху */}
             <div
               style={{
-                fontSize: 15,
+                fontSize: 19,
                 color: "#555",
                 letterSpacing: "0.02em",
                 marginBottom: "auto",
