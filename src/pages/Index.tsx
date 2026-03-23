@@ -104,7 +104,7 @@ export default function Index() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "flex-end",
-                gap: 6,
+                gap: 2,
               }}
             >
               <img
