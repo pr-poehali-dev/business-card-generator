@@ -1,14 +1,170 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
 
-const Index = () => {
+const QR_URL =
+  "https://cdn.poehali.dev/projects/132d405c-553e-42f4-8e21-517410a4dedf/bucket/1a99deae-988d-45a0-8bc6-92f9515c1b34.png";
+
+// 50×50 мм при 96 dpi → 189px, но для экрана удваиваем для читаемости
+const SIZE = 380;
+const RADIUS = 38; // 5мм / 50мм * 380px ≈ 38px
+
+export default function Index() {
+  const [flipped, setFlipped] = useState(false);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 24,
+        background: "#f0f0f0",
+        fontFamily: "'Golos Text', 'Roboto', sans-serif",
+      }}
+    >
+      {/* Card wrapper with 3D flip */}
+      <div
+        onClick={() => setFlipped((f) => !f)}
+        style={{
+          width: SIZE,
+          height: SIZE,
+          perspective: 1200,
+          cursor: "pointer",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "relative",
+            transformStyle: "preserve-3d",
+            transition: "transform 0.65s cubic-bezier(0.4,0.2,0.2,1)",
+            transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          }}
+        >
+          {/* ── ЛИЦЕВАЯ СТОРОНА ── */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              backfaceVisibility: "hidden",
+              WebkitBackfaceVisibility: "hidden",
+              borderRadius: RADIUS,
+              overflow: "hidden",
+              background: "#ffffff",
+              boxShadow: "0 8px 40px rgba(0,0,0,0.18)",
+              display: "flex",
+              flexDirection: "column",
+              padding: 36,
+              boxSizing: "border-box",
+            }}
+          >
+            {/* Специализация сверху */}
+            <div
+              style={{
+                fontSize: 15,
+                color: "#555",
+                letterSpacing: "0.02em",
+                marginBottom: "auto",
+              }}
+            >
+              Юрист-медиатор
+            </div>
+
+            {/* Имя — крупно, по центру-низу */}
+            <div style={{ marginBottom: 8 }}>
+              <div
+                style={{
+                  fontSize: 38,
+                  fontWeight: 700,
+                  color: "#111",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                Алексей
+              </div>
+              <div
+                style={{
+                  fontSize: 38,
+                  fontWeight: 700,
+                  color: "#111",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                Назаров
+              </div>
+            </div>
+
+            {/* Телефон снизу */}
+            <div
+              style={{
+                fontSize: 14,
+                color: "#444",
+                letterSpacing: "0.02em",
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+                marginTop: 20,
+              }}
+            >
+              <span style={{ fontSize: 16 }}>☎</span>
+              +7 918 206-66-50
+            </div>
+          </div>
+
+          {/* ── ОБРАТНАЯ СТОРОНА ── */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              backfaceVisibility: "hidden",
+              WebkitBackfaceVisibility: "hidden",
+              transform: "rotateY(180deg)",
+              borderRadius: RADIUS,
+              overflow: "hidden",
+              background: "#0d1b3e",
+              boxShadow: "0 8px 40px rgba(0,0,0,0.28)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 32,
+              boxSizing: "border-box",
+            }}
+          >
+            {/* QR-код с инверсией в белый */}
+            <img
+              src={QR_URL}
+              alt="QR-код"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                filter: "invert(1)",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Подсказка */}
+      <div
+        style={{
+          fontSize: 12,
+          color: "#999",
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+        }}
+      >
+        нажмите, чтобы перевернуть
+      </div>
+
+      {/* Размер */}
+      <div style={{ fontSize: 11, color: "#bbb", letterSpacing: "0.08em" }}>
+        50 × 50 мм · скругление 5 мм · цифровая печать
       </div>
     </div>
   );
-};
-
-export default Index;
+}
