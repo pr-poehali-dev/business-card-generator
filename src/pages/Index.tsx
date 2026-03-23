@@ -95,7 +95,7 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Телефон прибит к низу */}
+            {/* Телефон прибит к низу справа */}
             <div
               style={{
                 fontSize: 14,
@@ -103,11 +103,12 @@ export default function Index() {
                 letterSpacing: "0.02em",
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "flex-end",
                 gap: 6,
               }}
             >
-              <span style={{ fontSize: 16 }}>☎</span>
               +7 918 206-66-50
+              <span style={{ fontSize: 16 }}>📱</span>
             </div>
           </div>
 
