@@ -72,30 +72,19 @@ export default function Index() {
               Юрист-медиатор
             </div>
 
-            {/* Имя — крупно, по центру-низу */}
-            <div style={{ marginBottom: 8 }}>
-              <div
-                style={{
-                  fontSize: 38,
-                  fontWeight: 700,
-                  color: "#111",
-                  lineHeight: 1.1,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                Алексей
-              </div>
-              <div
-                style={{
-                  fontSize: 38,
-                  fontWeight: 700,
-                  color: "#111",
-                  lineHeight: 1.1,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                Назаров
-              </div>
+            {/* Имя — в одну строку */}
+            <div
+              style={{
+                fontSize: 38,
+                fontWeight: 700,
+                color: "#111",
+                lineHeight: 1.1,
+                letterSpacing: "-0.01em",
+                marginBottom: 8,
+                marginTop: 16,
+              }}
+            >
+              Алексей Назаров
             </div>
 
             {/* Телефон снизу */}
